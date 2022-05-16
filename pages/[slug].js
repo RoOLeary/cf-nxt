@@ -19,7 +19,6 @@ export default function Page({ singlePost }) {
 
       <main className={styles.main}>
         <Nav />
-        <h2>{singlePost.title}</h2>
         <PageBlocks content={singlePost['pageBlocks']} />
       </main>
      
