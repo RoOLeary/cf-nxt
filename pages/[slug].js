@@ -3,8 +3,9 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
-import Link from 'next/link'
+import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
+import Nav  from '../components/Nav';
 
 export default function Page({ singlePost }) {
 
@@ -17,15 +18,9 @@ export default function Page({ singlePost }) {
       </Head>
 
       <main className={styles.main}>
-        <ul>
-            <li><Link href={`/all-components`}><a>All Comps</a></Link></li>
-            <li><Link href={`/about`}><a>About</a></Link></li>
-            <li><Link href={`/agenda`}><a>Agenda</a></Link></li>
-            <li><Link href={`/partners`}><a>Partners</a></Link></li>
-            
-        </ul>
+        <Nav />
         <h2>{singlePost.title}</h2>
-        <PageBlocks content={ singlePost['pageBlocks'] } />
+        <PageBlocks content={singlePost['pageBlocks']} />
       </main>
      
     </div>

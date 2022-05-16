@@ -4,9 +4,9 @@ import Tickets from './Tickets';
 import Hero from './Hero';
 import PlaceHolder from './PlaceHolder';
 
-export default function PageBlocks(props){
-
-    const pageBlocks = Array.from(props.content);
+export default function PageBlocks({ content }){
+    
+    const pageBlocks = Array.from(content);
     const Output = pageBlocks.map((pageBlock, i) => {
         switch(pageBlock.__typename){
             case "pageBlocks_hero_BlockType":
