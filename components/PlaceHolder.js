@@ -1,8 +1,8 @@
-export default function PlaceHolder( props ){
-    console.log(props);
+export default function PlaceHolder({ heading }){
+    
     return(
         <div className="placeholder">
-            <h1>{props.heading} - placeholder</h1>
+            <h1>{heading} - placeholder</h1>
         </div>
     )
 }

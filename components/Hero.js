@@ -1,6 +1,6 @@
-export default function Hero(props) {
-    const { heading, eyebrow, cta, ctaLink } = props;
-    return (
+export default function Hero({ heading, eyebrow, cta, ctaLink }) {
+    
+  return (
       <div className="hero">
         <h5>{eyebrow}</h5>
         <h1>{heading}</h1>

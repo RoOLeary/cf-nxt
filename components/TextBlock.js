@@ -1,6 +1,4 @@
-export default function TextBlock(props) {
-
-    const { heading, content } = props;
+export default function TextBlock({ heading, content }) {
 
     return (
       <>

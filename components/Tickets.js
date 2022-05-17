@@ -1,8 +1,6 @@
 import Link from 'next/link';
 
-export default function Ticket( props ){
-
-    const { tickets, heading } = props;
+export default function Ticket({ tickets, heading }){
 
     return(
         <div className="tickets">

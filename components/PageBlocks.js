@@ -7,8 +7,8 @@ import PlaceHolder from './PlaceHolder';
 export default function PageBlocks({ content }){
     
     const pageBlocks = Array.from(content);
-    const Output = pageBlocks.map((pageBlock, i) => {
-        console.log(pageBlock)
+    const renderOutput = pageBlocks.map((pageBlock, i) => {
+        // console.log(pageBlock)
         switch(pageBlock.__typename){
             case "pageBlocks_hero_BlockType":
                 return <Hero 
@@ -39,7 +39,7 @@ export default function PageBlocks({ content }){
             case "pageBlocks_sessions_BlockType":
                 return <PlaceHolder key={'sessions'} heading="Sessions" />
             case "pageBlocks_blocks_BlockType":
-                return <PlaceHolder key={'blocks' + ' ' + i} heading="Blocks" />
+                return <PlaceHolder key={'blocks' + ' ' + pageBlock.id} heading="Blocks" />
             case "pageBlocks_video_BlockType":
                 return <PlaceHolder key={'video'} heading="Video" />
             case "pageBlocks_tickets_BlockType":
@@ -49,6 +49,6 @@ export default function PageBlocks({ content }){
         }
     })
 
-    return Output;
+    return renderOutput;
 
 }

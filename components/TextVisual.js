@@ -1,6 +1,4 @@
-export default function TextVisual(props) {
-
-    const { textVisualHeading } = props
+export default function TextVisual({ textVisualHeading }) {
 
     return (
         <div className="textVisual">
