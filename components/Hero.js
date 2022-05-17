@@ -1,5 +1,5 @@
-export default function Hero({ heading, eyebrow, cta, ctaLink }) {
-    
+export default function Hero({ content }) {
+  let { eyebrow, heading, cta } = content; 
   return (
       <div className="hero">
         <h5>{eyebrow}</h5>

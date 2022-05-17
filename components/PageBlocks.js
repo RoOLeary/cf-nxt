@@ -11,11 +11,7 @@ export default function PageBlocks({ content }){
         // console.log(pageBlock)
         switch(pageBlock.__typename){
             case "pageBlocks_hero_BlockType":
-                return <Hero 
-                        key={pageBlock.__typename + ' ' + i} 
-                        heading="Hero" 
-                        eyebrow={pageBlock.eyebrow}
-                    />
+                return <Hero key={pageBlock.id} content={pageBlock} />
             case "pageBlocks_text_BlockType":
                 return <TextBlock 
                         key={pageBlock.__typename + ' ' + i} 
@@ -24,12 +20,11 @@ export default function PageBlocks({ content }){
                     />
             case "pageBlocks_textVisual_BlockType":
                 return <TextVisual 
-                        key={pageBlock.__typename + ' ' + i} 
-                        textVisualHeading={pageBlock.textVisualHeading}
-                        textVisualContent={pageBlock.textVisualContent}    
+                        key={pageBlock.__typename + ' ' + i}  
+                        content={pageBlock}
                     />
             case "pageBlocks_speakers_BlockType":
-                return <PlaceHolder key={'speaker'} heading="Speakers" />
+                return <PlaceHolder key={pageBlock.__typename} heading="Speakers" />
             case "pageBlocks_sponsors_BlockType":
                 return <PlaceHolder key={'spons'} heading="Sponsors" />
             case "pageBlocks_stats_BlockType":

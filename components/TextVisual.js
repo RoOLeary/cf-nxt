@@ -1,8 +1,8 @@
-export default function TextVisual({ textVisualHeading }) {
+export default function TextVisual({ content }) {
 
     return (
         <div className="textVisual">
-            <h1>{textVisualHeading}</h1>
+            <h1>{content.textVisualHeading}</h1>
         </div>
     )
   }
