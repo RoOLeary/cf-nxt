@@ -8,7 +8,6 @@ export default function PageBlocks({ content }){
     
     const pageBlocks = Array.from(content);
     const renderOutput = pageBlocks.map((pageBlock, i) => {
-        // console.log(pageBlock)
         switch(pageBlock.__typename){
             case "pageBlocks_hero_BlockType":
                 return <Hero key={pageBlock.id} content={pageBlock} />
