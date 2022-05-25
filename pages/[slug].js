@@ -5,6 +5,7 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
+import Stats  from '../components/Stats';
 import Nav  from '../components/Nav';
 
 export default function Page({ singlePost }) {
@@ -20,6 +21,7 @@ export default function Page({ singlePost }) {
       <main className={styles.main}>
         <Nav />
         <PageBlocks content={singlePost['pageBlocks']} />
+        <Stats />
       </main>
      
     </div>
