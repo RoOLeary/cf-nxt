@@ -1,11 +1,8 @@
-const Stats = ({ stats }) => {
-//   const {
-//     showHorizontal, statsSubTitle, statiTitle, statsImage, statsTable,
-//   } = stats[0];
+const Stats = ({ content, statistics }) => {
+console.log(statistics);
+const showHorizontal = true;
+const image = 'https://placedog.net/500/280';
 
-//   const image = statsImage[0];
-const showHorizontal = false;
-  const image = 'https://placedog.net/500/280';
   const ShowHorizontalComponent = () => (
     <div className="o-wrapper">
       <header className="c-bodyBlock__header">
@@ -15,8 +12,9 @@ const showHorizontal = false;
       </header>
       <br />
       <ul className="c-bodyTextVisual__stats">
-               
-               <li className="c-bodyTextVisual__stat" >
+          {/* {stats.map((st, i) => {
+            return(
+              <li className="c-bodyTextVisual__stat" >
                  <div className="c-bodyTextVisual__statValue">
                    Over 9000
                  </div>
@@ -24,27 +22,9 @@ const showHorizontal = false;
                    Things
                  </div>
                </li>
-
-               <li className="c-bodyTextVisual__stat" >
-                 <div className="c-bodyTextVisual__statValue">
-                   Over 9000
-                 </div>
-                 <div className="c-bodyTextVisual__statMetric">
-                   Things
-                 </div>
-               </li>
-
-               <li className="c-bodyTextVisual__stat" >
-                 <div className="c-bodyTextVisual__statValue">
-                   Over 9000
-                 </div>
-                 <div className="c-bodyTextVisual__statMetric">
-                   Things
-                 </div>
-               </li>
-           
-
-           </ul>
+            )
+          })}   */}
+        </ul>
     </div>
   );
 
@@ -82,6 +62,8 @@ const showHorizontal = false;
             <div className="c-bodyTextVisual__body">
               <ul className="c-bodyTextVisual__stats">
                
+              {/* {stats.map((st, i) => {
+                return(
                   <li className="c-bodyTextVisual__stat" >
                     <div className="c-bodyTextVisual__statValue">
                       Over 9000
@@ -90,23 +72,8 @@ const showHorizontal = false;
                       Things
                     </div>
                   </li>
-
-                  <li className="c-bodyTextVisual__stat" >
-                 <div className="c-bodyTextVisual__statValue">
-                   Over 9000
-                 </div>
-                 <div className="c-bodyTextVisual__statMetric">
-                   Things
-                 </div>
-               </li>
-               <li className="c-bodyTextVisual__stat" >
-                 <div className="c-bodyTextVisual__statValue">
-                   Over 9000
-                 </div>
-                 <div className="c-bodyTextVisual__statMetric">
-                   Things
-                 </div>
-               </li>
+                )
+              })}   */}
 
               </ul>
             </div>

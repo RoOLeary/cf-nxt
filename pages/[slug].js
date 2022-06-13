@@ -45,6 +45,7 @@ export async function getServerSideProps(context) {
                 __typename
                 id
                 title
+                embedCode
               }
               ... on pageBlocks_tickets_BlockType {
                 __typename
@@ -92,7 +93,13 @@ export async function getServerSideProps(context) {
                 __typename
                 id
                 title
+                sources
+                stats {
+                  label
+                  value
+                }
               }
+              
               ... on pageBlocks_sponsors_BlockType {
                 __typename
                 id
@@ -130,6 +137,10 @@ export async function getServerSideProps(context) {
               ... on pageBlocks_faq_BlockType {
                 __typename
                 id
+                text
+                hasCta
+                ctaLink
+                ctaLabel
               }
               ... on pageBlocks_columns_BlockType {
                 __typename

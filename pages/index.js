@@ -51,7 +51,12 @@ export async function getStaticProps() {
               id
             }
             ... on pageBlocks_faq_BlockType {
+              __typename
               id
+              hasCta
+              ctaLink
+              ctaLabel
+              
             }
             ... on pageBlocks_partners_BlockType {
               id
@@ -63,7 +68,10 @@ export async function getStaticProps() {
               id
             }
             ... on pageBlocks_video_BlockType {
+              __typename
               id
+              title
+              embedCode
             }
             ... on pageBlocks_tickets_BlockType {
               id
@@ -89,7 +97,15 @@ export async function getStaticProps() {
               column2
             }
             ... on pageBlocks_stats_BlockType {
+              __typename
               id
+              title
+              stats {
+                value
+                label
+                col2
+                col1
+              }
             }
             ... on pageBlocks_sponsors_BlockType {
               id

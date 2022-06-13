@@ -13,7 +13,7 @@ export default function TextBlock({ heading, content }) {
       console.log('clicked'); 
       ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
       ctx[0].handlers.setShowModalContent(ctx[0].state.showModalContent);
-      // ctx[0].handlers.setToggledText('toggled, now go away');
+      ctx[0].handlers.setToggledText('toggled, now go away');
   } 
 
     return (

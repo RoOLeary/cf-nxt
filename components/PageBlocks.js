@@ -3,6 +3,9 @@ import TextVisual from './TextVisual';
 import Tickets from './Tickets';
 import Hero from './Hero';
 import PlaceHolder from './PlaceHolder';
+import Video from './Video';
+import Faq from './Faq';
+import Stats from './Stats';
 
 export default function PageBlocks({ content }){
     
@@ -27,15 +30,15 @@ export default function PageBlocks({ content }){
             case "pageBlocks_sponsors_BlockType":
                 return <PlaceHolder key={'spons'} heading="Sponsors" />
             case "pageBlocks_stats_BlockType":
-                return <PlaceHolder key={'stats'} heading="Stats" />
+                return <Stats key={'stats'} content={pageBlock} statistics={pageBlock.stats} />
             case "pageBlocks_faq_BlockType":
-                return <PlaceHolder key={'faq'} heading="Faq" />
+                return <Faq key={'faq'} content={pageBlock} />
             case "pageBlocks_sessions_BlockType":
                 return <PlaceHolder key={'sessions'} heading="Sessions" />
             case "pageBlocks_blocks_BlockType":
                 return <PlaceHolder key={'blocks' + ' ' + pageBlock.id} heading="Blocks" />
             case "pageBlocks_video_BlockType":
-                return <PlaceHolder key={'video'} heading="Video" />
+                return <Video key={'video'} content={pageBlock} />
             case "pageBlocks_tickets_BlockType":
                 return <Tickets key={'tickets'} heading={pageBlock.heading} tickets={pageBlock.tickets} />
             default: 
