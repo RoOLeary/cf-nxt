@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: 'https://cities.local.tnw.dev/api',
+    uri: 'https://cities.thenextweb.com/',
     cache: new InMemoryCache(),
     ssrMode: true,
     assumeImmutableResults: true,
