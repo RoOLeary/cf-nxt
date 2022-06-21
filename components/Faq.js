@@ -30,6 +30,15 @@ export default function Faq({ content }) {
                                         </div>
                                     </div>
                                 </li>
+
+                                <li className="b-faq__listItem">
+                                    <div className="b-faq__question js-faqQuestion">Title 2</div>
+                                    <div className="b-faq__answer">
+                                        <div className="b-faq__answerInner c-formatted js-faqAnswerInner">
+                                            Answer 2
+                                        </div>
+                                    </div>
+                                </li>
                         
                         </ul>
                     </div>
