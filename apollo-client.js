@@ -1,14 +1,21 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-
+const token = 'xmhW_1_0oLV29dcV7aQsNb_LdygNi5s6';
 const client = new ApolloClient({
-    uri: 'https://cities.thenextweb.com/api',
+    
+    uri: 'https://cities.thenextweb.com/api/',
+    ssrMode: typeof window === "undefined",
     cache: new InMemoryCache(),
-    // ssrMode: true,
-    // assumeImmutableResults: true,
-    // useGETForQueries: true,
-    headers: {
-        Authorization: `Bearer xmhW_1_0oLV29dcV7aQsNb_LdygNi5s6`,
+    credentials: 'same-origin',
+    fetchOptions:{
+      mode: 'no-cors',
+      method:'POST'
     },
+    headers: {
+      'Access-Control-Allow-Credentials': true,
+      'Content-Type': 'application/graphql',
+      'Access-Control-Allow-Origin': '*',
+    
+    } 
 });
 
 export default client;
