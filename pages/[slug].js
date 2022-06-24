@@ -7,9 +7,10 @@ import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
 import Stats  from '../components/Stats';
 import Nav  from '../components/Nav';
+import { getPostAndMorePosts } from './../lib/api';
 
-export default function Page({ singlePost }) {
-
+export default function Page({ singlePost, slug }) {
+    console.log(slug);
     return (
     <div className={styles.container}>
       <Head>
@@ -28,146 +29,14 @@ export default function Page({ singlePost }) {
   )
 }
 
-
 export async function getServerSideProps(context) {
-    const { slug } = context.query
-    const { data } = await client.query({
-    query: gql`
-    query getDublinSingle {
-        entry(section: "pages", site: "tnwDublin", slug: "${slug}") {
-          id
-          slug
-          title
-          ... on pages_default_Entry {
-            id
-            pageBlocks {
-              ... on pageBlocks_video_BlockType {
-                __typename
-                id
-                title
-                embedCode
-              }
-              ... on pageBlocks_tickets_BlockType {
-                __typename
-                id
-                title
-                heading
-                tickets {
-                  ... on tickets_default_Entry {
-                    id
-                    sectionHandle
-                    slug
-                    title
-                    ticketDescription
-                    ticketLink
-                    ticketLinktext
-                    ticketName
-                    ticketPrice
-                    ticketVat
-                  }
-                }
-              }
-              ... on pageBlocks_textVisual_BlockType {
-                __typename
-                id
-                title
-                textVisualHeading
-                textVisualContent
-                textVisualCta {
-                  ... on textVisualCta_BlockType {
-                    id
-                    tvCtaText
-                    tvCtaLink
-                    tvCtaIsBlank
-                  }
-                }
-              }
-              ... on pageBlocks_text_BlockType {
-                __typename
-                id
-                column1
-                column2
-                heading
-              }
-              ... on pageBlocks_stats_BlockType {
-                __typename
-                id
-                title
-                sources
-                stats {
-                  label
-                  value
-                }
-              }
-              
-              ... on pageBlocks_sponsors_BlockType {
-                __typename
-                id
-                sponsorsTitle
-              }
-              ... on pageBlocks_speakers_BlockType {
-                __typename
-                id
-                title
-              }
-              ... on pageBlocks_signup_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_sessions_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_rewards_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_partners_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_hero_BlockType {
-                __typename
-                id
-                heading
-                eyebrow
-                ctaTitle
-                ctaLink
-              }
-              ... on pageBlocks_faq_BlockType {
-                __typename
-                id
-                text
-                hasCta
-                ctaLink
-                ctaLabel
-              }
-              ... on pageBlocks_columns_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_challenges_BlockType {
-                __typename
-                id
-              }
-              ... on pageBlocks_blocks_BlockType {
-                __typename
-                id
-              }
-            }
-          }
-        }
-      }
-    
-    `,
-  });
-
-
+  const { slug } = context.query
+  const data = await getPostAndMorePosts(slug);
 
   return {
-    props: {
-      singlePost: data.entry,
-      slug: slug
-    },
- };
+      props: { 
+        singlePost: data.entry,
+        slug: slug
+      }
+  };
 }

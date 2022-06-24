@@ -9,6 +9,7 @@ export default function Nav(){
                 <li><Link href={`/agenda`}><a>Agenda</a></Link></li>
                 <li><Link href={`/partners`}><a>Partners</a></Link></li>
                 <li><Link href={`/faq`}><a>Faq</a></Link></li>
+                <li><Link href={`/`}><a>Home</a></Link></li>
             </ul>
         </>
     )
