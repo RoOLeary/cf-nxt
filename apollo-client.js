@@ -1,8 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-const token = 'xmhW_1_0oLV29dcV7aQsNb_LdygNi5s6';
+const token = '8YjnkaiY0aJ6rJQjwbT2wawiJPAC2PGE';
 const client = new ApolloClient({
     
-    uri: 'https://cities.thenextweb.com/api',
+    uri: 'https://cities.local.tnw.dev/api',
     ssrMode: typeof window === "undefined",
     cache: new InMemoryCache(),
     credentials: 'same-origin',
@@ -11,6 +11,7 @@ const client = new ApolloClient({
       method:'POST'
     },
     headers: {
+      'Content-Type': 'application/json',
       "Access-Control-Allow-Origin" : "*", 
       "Access-Control-Allow-Credentials" : true
     } 

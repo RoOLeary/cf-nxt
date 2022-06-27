@@ -7,10 +7,10 @@ import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
 import Stats  from '../components/Stats';
 import Nav  from '../components/Nav';
-import { getPostAndMorePosts } from './../lib/api';
+import { getPostAndMorePosts } from './../lib/api'
 
-export default function Page({ singlePost, slug }) {
-    console.log(slug);
+export default function Page({ entry }) {
+    console.log(entry);
     return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +21,7 @@ export default function Page({ singlePost, slug }) {
 
       <main className={styles.main}>
         <Nav />
-        <PageBlocks content={singlePost['pageBlocks']} />
+        <PageBlocks content={entry['pageBlocks']} />
         <Stats />
       </main>
      
@@ -29,14 +29,16 @@ export default function Page({ singlePost, slug }) {
   )
 }
 
+
 export async function getServerSideProps(context) {
   const { slug } = context.query
   const data = await getPostAndMorePosts(slug);
 
   return {
       props: { 
-        singlePost: data.entry,
-        slug: slug
+          entry: data.entry,
+          currentPage: "1",
       }
   };
 }
+
