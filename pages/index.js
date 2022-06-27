@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import { getAllPostsForHome } from './../lib/api'
 
 export default function Home({ allPosts }) {
-  console.log(allPosts)
+  // console.log(allPosts)
   return (
     <div className={styles.container}>
       <Head>

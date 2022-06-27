@@ -26,3 +26,17 @@ module.exports = {
     ]
   },
 }
+
+module.exports = {
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      '/': { page: '/' },
+      '/all-components': { page: '/all-components' },
+      '/about': { page: '/about', query: { title: 'About' } },
+    
+    }
+  },
+}
