@@ -31,6 +31,21 @@ const image = 'https://placedog.net/500/280';
   const ShowVerticalComponent = () => (
     <>
       <figure className="c-bodyTextVisual__visual js-parallax o-parallax">
+        <img
+          alt={image.title}
+          className="c-bodyTextVisual__visualImage js-parallaxLayer o-parallax__content js-lazy"
+          data-src={image.url}
+          src={image.url}
+          style={{ opacity: 1 }}
+        />
+
+        <noscript>
+          <img
+            alt=""
+            className="c-bodyTextVisual__visualImage o-parallax__content"
+            src={image.url}
+          />
+        </noscript>
       </figure>
       <div className="o-wrapper">
         <div className="c-bodyTextVisual__text">
