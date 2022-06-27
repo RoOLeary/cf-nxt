@@ -31,6 +31,7 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps(context) {
+  console.log(context);
   const data = await getAllPostsForHome();
 
   return {

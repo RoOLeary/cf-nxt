@@ -4,13 +4,13 @@ import { GlobalContext } from './../contexts/GlobalContext';
 export default function TextBlock({ heading, content }) {
 
 
-    console.log(heading);
+    // console.log(heading);
     const ctx = useContext(GlobalContext); 
     const toggled = ctx[0].state.toggledText; 
 
 
     const logCurrent = (e) => {
-      console.log('clicked'); 
+      // console.log('clicked'); 
       ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
       ctx[0].handlers.setShowModalContent(ctx[0].state.showModalContent);
       ctx[0].handlers.setToggledText('toggled, now go away');

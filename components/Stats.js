@@ -1,5 +1,5 @@
 const Stats = ({ content, statistics }) => {
-console.log(content);
+// console.log(content);
 const showHorizontal = true;
 const image = 'https://placedog.net/500/280';
 

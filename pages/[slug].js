@@ -8,7 +8,7 @@ import Nav  from '../components/Nav';
 import { getPostAndMorePosts } from './../lib/api'
 
 export default function Page({ entry }) {
-    console.log(entry);
+    // console.log(entry);
     return (
     <div className={styles.container}>
       <Head>
