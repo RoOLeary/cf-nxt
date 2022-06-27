@@ -8,7 +8,9 @@ import Nav  from '../components/Nav';
 import { getAllPostsForHome, getPostAndMorePosts } from './../lib/api'
 
 export default function Page({ entry }) {
-    console.log(entry);
+    
+    
+
     return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +21,7 @@ export default function Page({ entry }) {
 
       <main className={styles.main}>
         <Nav />
-        <PageBlocks content={entry['pageBlocks']} />
+        {entry ? <PageBlocks content={entry['pageBlocks']} /> : 'Loading'}
         <Stats />
       </main>
      
