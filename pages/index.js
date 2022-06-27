@@ -30,9 +30,8 @@ export default function Home({ allPosts }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query
-  const data = await getAllPostsForHome(slug);
+export async function getStaticProps(context) {
+  const data = await getAllPostsForHome();
 
   return {
       props: { 
