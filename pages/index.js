@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import { gql } from "@apollo/client";
-import client from "../apollo-client";
 import { getAllPostsForHome } from './../lib/api'
 
 export default function Home({ allPosts }) {

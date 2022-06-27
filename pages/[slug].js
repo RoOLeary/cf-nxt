@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { gql } from "@apollo/client";
-import client from "../apollo-client";
 import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
 import Stats  from '../components/Stats';
