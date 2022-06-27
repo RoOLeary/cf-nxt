@@ -5,10 +5,10 @@ import Link from 'next/link';
 import PageBlocks  from '../components/PageBlocks';
 import Stats  from '../components/Stats';
 import Nav  from '../components/Nav';
-import { getPostAndMorePosts } from './../lib/api'
+import { getAllPostsForHome, getPostAndMorePosts } from './../lib/api'
 
 export default function Page({ entry }) {
-    // console.log(entry);
+    console.log(entry);
     return (
     <div className={styles.container}>
       <Head>
@@ -27,10 +27,23 @@ export default function Page({ entry }) {
   )
 }
 
+export async function getStaticPaths() {
+  const res = await getAllPostsForHome();
+  const pageList = await res;
+  return {
+    paths: Array.from(pageList).map((page) => {
+      return {
+        params: {
+          slug: `${page.slug}`,
+        },
+      }
+    }),
+    fallback: true
+  }
+}
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query
-  const data = await getPostAndMorePosts(slug);
+export async function getStaticProps({ params }) {
+  const data = await getPostAndMorePosts(params.slug);
 
   return {
       props: { 
