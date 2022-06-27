@@ -4,7 +4,7 @@ import { GlobalContext } from './../contexts/GlobalContext';
 export default function TextBlock({ heading, content }) {
 
 
-    // console.log(content);
+    console.log(heading);
     const ctx = useContext(GlobalContext); 
     const toggled = ctx[0].state.toggledText; 
 

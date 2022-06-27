@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 const token = 'xmhW_1_0oLV29dcV7aQsNb_LdygNi5s6';
 const client = new ApolloClient({
     
-    uri: 'https://cities.thenextweb.com/api/',
+    uri: 'https://cities.thenextweb.com/api',
     ssrMode: typeof window === "undefined",
     cache: new InMemoryCache(),
     credentials: 'same-origin',
