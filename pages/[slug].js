@@ -39,7 +39,7 @@ export async function getStaticPaths() {
         },
       }
     }),
-    fallback: true
+    fallback: false
   }
 }
 
@@ -48,8 +48,7 @@ export async function getStaticProps({ params }) {
 
   return {
       props: { 
-          entry: data.entry,
-          currentPage: "1",
+        entry: data.entry,
       }
   };
 }
