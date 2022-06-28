@@ -9,7 +9,6 @@ import { getAllPostsForHome, getPostAndMorePosts } from './../lib/api'
 
 export default function Page({ entry }) {
     
-    
 
     return (
     <div className={styles.container}>
@@ -40,7 +39,7 @@ export async function getStaticPaths() {
         },
       }
     }),
-    fallback: false
+    fallback: true
   }
 }
 
