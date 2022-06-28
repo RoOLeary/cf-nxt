@@ -44,6 +44,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  // console.log(params.slug)
   const data = await getPostAndMorePosts(params.slug);
 
   return {
